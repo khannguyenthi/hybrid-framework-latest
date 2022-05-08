@@ -204,11 +204,11 @@ public class BasePage {
 	}
 	
 	public String getElementText(WebDriver driver, String locatorType) {
-		return getWebElement(driver, locatorType).getText();
+		return getWebElement(driver, locatorType).getText().trim();
 	}
 	
 	public String getElementText(WebDriver driver, String locatorType, String...dynamicValues) {
-		return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).getText();
+		return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).getText().trim();
 	}
 	
 	public void selectItemInDefaultDropdown(WebDriver driver, String locatorType, String textItem) {
@@ -221,8 +221,14 @@ public class BasePage {
 		select.selectByVisibleText(textItem);
 	}
 	
+	
 	public String getSelectedItemDefaultDropdown(WebDriver driver, String xpathLocator) {
 		Select select = new Select(getWebElement(driver, xpathLocator));
+		return select.getFirstSelectedOption().getText();
+	}
+	
+	public String getSelectedItemDefaultDropdown(WebDriver driver, String xpathLocator, String...dynamicValues) {
+		Select select = new Select(getWebElement(driver, getDynamicXpath(xpathLocator, dynamicValues)));
 		return select.getFirstSelectedOption().getText();
 	}
 	
@@ -468,28 +474,34 @@ public class BasePage {
 		return status;
 	}
 	
-	public boolean areJQueryAndJSLoadedSuccess(WebDriver driver) {
+	public boolean isJQueryAJAXLoadedSuccess(WebDriver driver) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		ExpectedCondition <Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
-			@Override
+	
+		        @Override
+		        public Boolean apply(WebDriver driver) {
+		            return (Boolean) jsExecutor.executeScript("return (window.jQuery != null) && (jQuery.active === 0);");
+		        }
+		    };
+		    return explicitWait.until(jQueryLoad);
+		  }
+
+		
+	public boolean isJQueryAjaxLoadedSuccess(WebDriver driver) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
+			@Override 
 			public Boolean apply(WebDriver driver) {
-				try {
-					return((Long) jsExecutor.executeScript("return jQuery.active")==0);
-				} catch (Exception e) {
-					return true;
-				}
+				return (Boolean) jsExecutor.executeScript("return (windown.jQuery != null) && (jQuery.active == 0);");
 			}
 		};
-		ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
-			@Override
-			public Boolean apply(WebDriver driver) {
-				return jsExecutor.executeScript("return document.readyState").toString().equals("complete");
-			}
-		};
-		return explicitWait.until(jQueryLoad) && explicitWait.until(jsLoad);
+		
+		return explicitWait.until(jQueryLoad);
 	}
 
+	
 	public void waitForElementVisible(WebDriver driver, String locatorType) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locatorType)));
@@ -662,22 +674,22 @@ public class BasePage {
 	 * @param checkbox
 	 * @param value
 	 */
-	public void clickToCheckboxByLabel(WebDriver driver, String checkboxLabelName) {
+	/*public void clickToCheckboxByLabel(WebDriver driver, String checkboxLabelName) {
 		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, checkboxLabelName);
 		checkToDefaultCheckboxOrRadio(driver, BasePageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, checkboxLabelName);
 
-	}
+	}*/
 	
 	/** Get value in textbox by textbox ID
 	 * @param driver
 	 * @param textboxID
 	 * @return
 	 */
-	public String getTextboxValueByID(WebDriver driver, String textboxID) {
+	/*public String getTextboxValueByID(WebDriver driver, String textboxID) {
 		waitForElementVisible(driver, BasePageNopCommerceUI.DYNAMIC_TEXT_BOX_BY_ID,textboxID);
 		//ten cua attribute inpect as value
 		return getElementAttribute(driver, BasePageNopCommerceUI.DYNAMIC_TEXT_BOX_BY_ID, "value", textboxID);
-	}
+	} */
 
 
 	
@@ -743,14 +755,69 @@ public class BasePage {
 		clickToElement(driver, BasePageUI.BUTTON_BY_ID, buttonIDName);
 	}
 	
-	//Textbox dynamic
+	//Enter Textbox component dynamic
 	public void enterToTextboxByID(WebDriver driver, String textboxIDName, String value) {
 		waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_ID, textboxIDName);
-		sendkeyToElement(driver, BasePageUI.TEXTBOX_BY_ID, value,textboxIDName);
-		
-		
+		sendkeyToElement(driver, BasePageUI.TEXTBOX_BY_ID, value,textboxIDName);	
+	}
+	//Get textbox value
+	/**
+	 * Get textbox value by textbox id 
+	 * @param driver
+	 * @param textboxIDName
+	 * @return attribute value
+	 * @author Khan Nguyen
+	 */
+	public String getTextboxValueByID(WebDriver driver, String textboxIDName) {
+		waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_ID, textboxIDName);
+		return getElementAttribute(driver, BasePageUI.TEXTBOX_BY_ID, "value", textboxIDName);	
+	}
+	//Dropdown
+	public void selectItemInDropdownByID(WebDriver driver, String dropDownID, String valueItem) {
+		waitForElementClickable(driver, BasePageUI.DROPDOWN_BY_ID, dropDownID);
+		selectItemInDefaultDropdown(driver, BasePageUI.DROPDOWN_BY_ID, valueItem, dropDownID);
 	}
 	
+	/**
+	 * Get value of selected dropdown dynamic base on ID
+	 * @param driver
+	 * @param dropDownID
+	 * @return value of selected dropdown
+	 * @author Khan Nguyen
+	 */
+	public String getSelectedValueInDropdownByID(WebDriver driver, String dropDownID) {
+		waitForElementClickable(driver, BasePageUI.DROPDOWN_BY_ID, dropDownID);
+		return getSelectedItemDefaultDropdown(driver, BasePageUI.DROPDOWN_BY_ID, dropDownID);
+	}
+	
+	/**
+	 * Click to checkbox by lable text dynamic
+	 * @param driver
+	 * @param checkboxLabelName
+	 * @author Khan Nguyen
+	 */
+	public void clickToCheckboxByLabel(WebDriver driver, String checkboxLabelName) {
+		waitForElementClickable(driver, BasePageUI.CHECKBOX_BY_LABEL, checkboxLabelName);
+		checkToDefaultCheckboxOrRadio(driver, BasePageUI.CHECKBOX_BY_LABEL, checkboxLabelName);
+	}
+	
+	/**
+	 * Click to radio by label text value
+	 * @param driver
+	 * @param radioLabelName
+	 * @author Khan Nguyen
+	 */
+	public void clickToRadioByLabel(WebDriver driver, String radioLabelName) {
+		waitForElementClickable(driver, BasePageUI.RADIO_BY_LABEL, radioLabelName);
+		checkToDefaultCheckboxOrRadio(driver, BasePageUI.RADIO_BY_LABEL, radioLabelName);
+	}
+	
+	//Video 18 - 60 at 1:58' 
+	public String getValueInTableIDAtColumnNameAndRowIndex(WebDriver driver, String tableID, String headerName, String rowIndex) {
+		int columnIndex = getElementSize(driver, BasePageUI.TABLE_HEADER_BY_ID_AND_NAME, tableID, headerName) +1;
+		waitForElementVisible(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, tableID, rowIndex, String.valueOf(columnIndex));
+		return getElementText(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, tableID, rowIndex, String.valueOf(columnIndex));
+	}
 		
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 	private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
