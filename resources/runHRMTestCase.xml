@@ -11,11 +11,12 @@
 
 <parameter name= "url" value="https://opensource-demo.orangehrmlive.com/" />
 
-  <test name="Run on FIREFOX">
-  	<parameter name="browser" value="FIREFOX" > </parameter>
+  <test name="Run on CHROME">
+  	<parameter name="browser" value="CHROME" > </parameter>
     <classes>
     <!--  Trigger Common 01 run first -->
          <class name="com.hrm.employee.Level_19_Live_Coding"/>
        </classes>
   </test>
 </suite> 
+

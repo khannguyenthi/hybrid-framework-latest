@@ -15,6 +15,8 @@ import pageObjects.hrm.pageGenerator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -26,6 +28,10 @@ import org.testng.annotations.AfterClass;
 
 public class Level_19_Live_Coding extends BaseTest{
 	String adminUserName, adminPassword, empFirstName, empLastName, empUserName, empPassword, employeeID, statusValue, empFullName;
+	String editEmpFirstName, editEmpLastName, editEmpGender, editEmpMaritalStatus, editEmpNationality;
+	String contactEmpStreet1, contactEmpStreet2, contactEmpCity, contactEmpProvince, contactEmpZipcode, contactEmpContry, contactEmpHomePhone;
+	String contactEmpMobile, contactEmpWorkPhone, contactEmpWorkEmail, contactEmpOtherEmail;
+	
 	String avatarFilePath = GlobalConstants.UPLOAD_FILE + "Avatar.jpg";
 	
 	 @Parameters({ "browser", "url" })
@@ -45,6 +51,25 @@ public class Level_19_Live_Coding extends BaseTest{
 		 empUserName = "automationfc";
 		 empPassword = "automation123";
 		 empFullName = empFirstName + " " + empLastName; 
+		 
+		 editEmpFirstName = "John";
+		 editEmpLastName = "Wick";
+		 editEmpGender = "Male";
+		 editEmpMaritalStatus = "Single";
+		 editEmpNationality = "Vietnamese";
+		 
+		 contactEmpStreet1 = "490 Le Van Sy";
+		 contactEmpStreet2 = "Tan Binh"; 
+		 contactEmpCity = "HCM";
+		 contactEmpProvince = "Mien Nam";
+		 contactEmpZipcode = "084";
+		 contactEmpContry = "Viet Nam";
+		 contactEmpHomePhone = "0904309549";
+		 contactEmpMobile = "039423993";
+		 contactEmpWorkPhone = "2398487";
+		 contactEmpWorkEmail = "khan@gmail.com";
+		 contactEmpOtherEmail = "automation@email.com";
+			
 		 
 		 log.info("Pre-condition - Step 02: Login with admin role");
 		 dashboardPage = loginPage.loginToSystem(driver,  adminUserName, adminPassword);
@@ -96,15 +121,15 @@ public class Level_19_Live_Coding extends BaseTest{
 	 addEmployeePage.selectItemInDropdownByID(driver, "status", statusValue);
 	 
 	 log.info("Add_New_01 - Step 11: Click to 'Save' button");
-	 //personalDetailPage = addEmployeePage.clickToSaveButton();
+	 //myInforPage = addEmployeePage.clickToSaveButton();
 	 addEmployeePage.clickToButtonById(driver, "btnSave");
-	 personalDetailPage = pageGenerator.getMyInfoPage(driver);
+	 myInforPage = pageGenerator.getMyInfoPage(driver);
 	 
 	 
 	 log.info("Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully");
-	 //employeeListPage = personalDetailPage.openEmployeeListPage();
+	 //employeeListPage = myInforPage.openEmployeeListPage();
 	 
-	 personalDetailPage.openSubMenuPage(driver, "PIM", "Employee List");
+	 myInforPage.openSubMenuPage(driver, "PIM", "Employee List");
 	 employeeListPage = pageGenerator.getEmployeeListPage(driver);
 	 
 	 log.info("Add_New_01 - Step 13: Enter valid info to 'Employee Name' textbox");
@@ -121,45 +146,214 @@ public class Level_19_Live_Coding extends BaseTest{
 	 //verifyEquals(employeeListPage.getValueInTableIDAtColumnNameAndRowIndex(driver, "resultTable", "Last Name", "1"), empLastName); 
 	 
 	 log.info("Add_New_01 - Step 16: Logout to system");
+	 loginPage = employeeListPage.logoutToSystem(driver);
 }
  
  
-  @Test
+  //@Test
   public void Employee_02_Upload_Avatar() { 
 	  log.info("Upload_Avatar_02 - Step 01: Login with employee role");
-	  loginPage = employeeListPage.logoutToSystem(driver);
 	  dashboardPage = loginPage.loginToSystem(driver,  empUserName, empPassword);
 	  
 	  log.info("Upload_Avatar_02 - Step 02: Open 'My Info' menu page");
 	  dashboardPage.openMenuPage(driver, "My Info");
-	  personalDetailPage = pageGenerator.getMyInfoPage(driver);
+	  myInforPage = pageGenerator.getMyInfoPage(driver);
 	  
 	  log.info("Upload_Avatar_02 - Step 03: Click to Change Photo Image");
-	  personalDetailPage.clickToChangePhotoImage();
+	  myInforPage.clickToChangePhotoImage();
 	  
 	  log.info("Upload_Avatar_02 - Step 04: Upload new avatar image");
-	  personalDetailPage.uploadImage(driver, avatarFilePath);
+	  myInforPage.uploadImage(driver, avatarFilePath);
 	  
 	  log.info("Upload_Avatar_02 - Step 05: Click to Upload button");
-	  personalDetailPage.clickToButtonById(driver, "btnSave");
+	  myInforPage.clickToButtonById(driver, "btnSave");
 	  
+	  verifyTrue(myInforPage.isJQueryAjaxLoadedSuccess(driver));
+		 
 	  log.info("Upload_Avatar_02 - Step 06: Verify success message is displayed");
-	  personalDetailPage.isJQueryAjaxLoadedSuccess(driver);
-	  verifyTrue(personalDetailPage.isUploadAvatarSuccessMessageDisplay());
+	  verifyTrue(myInforPage.isSuccessMessageDisplay(driver, "Successfully Uploaded"));
+
+	  verifyTrue(myInforPage.isJQueryAjaxLoadedSuccess(driver));
+		 
 	  
-	  personalDetailPage.isJQueryAjaxLoadedSuccess(driver);
 	  log.info("Upload_Avatar_02 - Step 07: Verify new avatar image is displayed");
-	  verifyTrue(personalDetailPage.isNewAvatarImageDisplay());
+	  verifyTrue(myInforPage.isNewAvatarImageDisplay());
 	  
   }
   
   @Test
   public void Employee_03_Personal_Details() {
+	  log.info("Personal Details 03 - Step 01: Click to 'Personal Details' tab at side bar");
+	  myInforPage.openTabAtSideBarByName("Personal Details");
 	  
+	  log.info("Personal Details 03 - Step 02: Verify all fields at 'Personal Details' form are disabled");
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_txtEmpFirstName"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_txtEmpLastName"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_txtLicenNo"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_txtEmployeeId"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_txtSINNo"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_cmbMarital"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_optGender_1"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_optGender_2"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_DOB"));
+	  
+	  log.info("Personal Details 03 - Step 03: Click Edit button at 'Personal Details' form");
+	  myInforPage.clickToButtonById(driver, "btnSave");
+	  
+	  log.info("Personal Details 03 - Step 04: Verify 'Employee Id' textbox is disabled");
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_txtEmployeeId"));
+	  
+	  log.info("Personal Details 03 - Step 05: Verify 'Driver's Lience Number' textbox is disabled ");
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_txtLicenNo"));
+	  
+	  log.info("Personal Details 03 - Step 06: Verify 'SSN Number' textbox is disabled");
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_txtNICNo"));
+	  
+	  log.info("Personal Details 03 - Step 07: Verify 'SIN Number' textbox is disabled");
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_txtSINNo"));
+	  
+	  log.info("Personal Details 03 - Step 08: Verify 'Date Of Birth' textbox is disabled");
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "personal_DOB"));
+	  
+	  log.info("Personal Details 03 - Step 09: Enter new value to 'First Name' textbox");
+	  myInforPage.enterToTextboxByID(driver, "personal_txtEmpFirstName", editEmpFirstName);
+	  
+	  log.info("Personal Details 03 - Step 10: Enter new value to 'Last Name' textbox");
+	  myInforPage.enterToTextboxByID(driver, "personal_txtEmpLastName", editEmpLastName);
+	  
+	  log.info("Personal Details 03 - Step 11: Select new value to 'Gender' radio button");
+	  myInforPage.clickToRadioByLabel(driver ,editEmpGender);
+	  
+	  log.info("Personal Details 03 - Step 12: Select new value to 'Marital Status' dropdown");
+	  myInforPage.selectItemInDropdownByID(driver, "personal_cmbMarital", editEmpMaritalStatus);
+	  
+	  log.info("Personal Details 03 - Step 13: Select new value to 'Nationality' dropdown");
+	  myInforPage.selectItemInDropdownByID(driver, "personal_cmbNation", editEmpNationality);
+	  
+	  log.info("Personal Details 03 - Step 14: Click to 'Save' button at Personal Details");
+	  myInforPage.clickToButtonById(driver, "btnSave");
+	  
+	  log.info("Personal Details 03 - Step 15: Verify Success Message is displayed");
+	  verifyTrue(myInforPage.isSuccessMessageDisplay(driver, "Successfully Save"));
+	  
+	  log.info("Personal Details 03 - Step 16: Verify 'First Name' textbox update successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "personal_txtEmpFirstName"), editEmpFirstName);
+	  
+	  log.info("Personal Details 03 - Step 17: Verify 'Last Name' textbox update successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "personal_txtEmpLastName"), editEmpLastName);
+	  
+	  log.info("Personal Details 03 - Step 18: Verify 'Gender' radio button update successfully");
+	  verifyTrue(myInforPage.isRadioButtonSelectedByLabel(driver, editEmpGender));
+	  
+	  log.info("Personal Details 03 - Step 19: Verify 'Marital Status' dropdown update successfully");
+	  verifyEquals(myInforPage.getSelectedValueInDropdownByID(driver, "personal_cmbMarital"), editEmpMaritalStatus);
+	  
+	  log.info("Personal Details 03 - Step 20: Verify 'Nationality' dropdown value update successfully");
+	  verifyEquals(myInforPage.getSelectedValueInDropdownByID(driver, "personal_cmbNation"), editEmpNationality);
+	   
+	  log.info("Personal Details 03 - Step 21: Verify 'Employee ID' textbox is correct");
+	  verifyEquals(myInforPage.getTextboxValueByID(driver, "personal_txtEmployeeId"), employeeID);
   }
   
-  @Test
+  //@Test
   public void Employee_04_Contact_Details() {
+	  log.info("Contact Details 04 - Step 01: Click to 'Contact Details' tab at side bar");
+	  myInforPage.openTabAtSideBarByName("Contact Details");
+	  
+	  log.info("Contact Details 04 - Step 02: Verify all fields at 'Contact Details' form are disabled");
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "contact_street1"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "contact_street2"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "contact_city"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "contact_province"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "contact_emp_zipcode"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "contact_country"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "contact_emp_hm_telephone"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "contact_emp_mobile"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "contact_emp_work_telephone"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "contact_emp_work_email"));
+	  verifyFalse(myInforPage.isFieldEnableByName(driver, "contact_emp_oth_email"));
+	  
+	  log.info("Contact Details 04 - Step 03: Click to 'Edit' button at 'Contact Details' form");
+	  myInforPage.clickToButtonById(driver, "btnSave");
+	  	  
+	  log.info("Contact Details 04 - Step 04: Enter new value to 'Address Street 1' textbox");
+	  myInforPage.enterToTextboxByID(driver, "contact_street1", contactEmpStreet1);
+	  
+	  log.info("Contact Details 04 - Step 05: Enter new value to 'Address Street 2' textbox");
+	  myInforPage.enterToTextboxByID(driver, "contact_street2", contactEmpStreet2);
+	  
+	  log.info("Contact Details 04 - Step 06: Enter new value to 'City' textbox");
+	  myInforPage.enterToTextboxByID(driver, "contact_city", contactEmpCity);
+	  
+	  log.info("Contact Details 04 - Step 07: Enter new value to 'State/Provice' textbox");
+	  myInforPage.enterToTextboxByID(driver, "contact_province", contactEmpProvince);
+	  
+	  log.info("Contact Details 04 - Step 08: Enter new value to 'Zip/Postal Code' textbox");
+	  myInforPage.enterToTextboxByID(driver, "contact_emp_zipcode", contactEmpZipcode);
+	  
+	  log.info("Contact Details 04 - Step 09: Enter new value to 'Zip/Postal Code' textbox");
+	  myInforPage.enterToTextboxByID(driver, "contact_emp_zipcode", contactEmpZipcode);
+	  
+	  log.info("Contact Details 04 - Step 10: Select new value to 'Country' dropdown list");
+	  myInforPage.selectItemInDropdownByID(driver, "contact_country", contactEmpContry);
+	  
+	  log.info("Contact Details 04 - Step 11: Enter new value to 'Home Telephone' textbox");
+	  myInforPage.enterToTextboxByID(driver, "contact_emp_hm_telephone", contactEmpHomePhone);
+	  
+	  log.info("Contact Details 04 - Step 12: Enter new value to 'Mobile' textbox");
+	  myInforPage.enterToTextboxByID(driver, "contact_emp_mobile", contactEmpMobile);
+	  
+	  log.info("Contact Details 04 - Step 13: Enter new value to 'Work Phone' textbox");
+	  myInforPage.enterToTextboxByID(driver, "contact_emp_work_telephone", contactEmpWorkPhone);
+	  
+	  log.info("Contact Details 04 - Step 14: Enter new value to 'Work Email' textbox");
+	  myInforPage.enterToTextboxByID(driver, "contact_emp_work_email", contactEmpWorkEmail);
+	  
+	  log.info("Contact Details 04 - Step 15: Enter new value to 'Other Email' textbox");
+	  myInforPage.enterToTextboxByID(driver, "contact_emp_oth_email", contactEmpOtherEmail);
+	  
+	  log.info("Contact Details 04 - Step 16: Click to 'Save' button at 'Contact Details' form");
+	  myInforPage.clickToButtonById(driver, "btnSave");
+	  
+	  verifyTrue(myInforPage.isJQueryAjaxLoadedSuccess(driver));
+		 
+	  log.info("Contact Details 04 - Step 17: Verify success message is displayed");
+	  verifyTrue(myInforPage.isSuccessMessageDisplay(driver, "Successfully Saved"));
+	  
+	  verifyTrue(myInforPage.isJQueryAjaxLoadedSuccess(driver));
+		 
+	  log.info("Contact Details 04 - Step 18: Verify 'Address Street 1' textbox add successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "contact_street1"), contactEmpStreet1);
+	  
+	  log.info("Contact Details 04 - Step 19: Verify 'Address Street 2' textbox add successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "contact_street2"), contactEmpStreet2);
+	  
+	  log.info("Contact Details 04 - Step 20: Verify 'City' textbox add successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "contact_city"), contactEmpCity);
+	  
+	  log.info("Contact Details 04 - Step 21: Verify 'State/Province' textbox add successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "contact_province"), contactEmpProvince);
+	  
+	  log.info("Contact Details 04 - Step 22: Verify 'Zip/Postal Code' textbox add successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "contact_emp_zipcode"), contactEmpZipcode);
+	  
+	  log.info("Contact Details 04 - Step 23: Verify 'Country' dropdown select successfully");
+	  assertEquals(myInforPage.getSelectedValueInDropdownByID(driver, "contact_country"), contactEmpContry);
+	  
+	  log.info("Contact Details 04 - Step 24: Verify 'Home Telephone' textbox add successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "contact_emp_hm_telephone"), contactEmpHomePhone);
+	  
+	  log.info("Contact Details 04 - Step 25: Verify 'Mobile' textbox add successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "contact_emp_mobile"), contactEmpMobile);
+	  
+	  log.info("Contact Details 04 - Step 26: Verify 'Work Telephone' textbox add successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "contact_emp_work_telephone"), contactEmpWorkPhone);
+	  
+	  log.info("Contact Details 04 - Step 27: Verify 'Work Email' textbox add successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "contact_emp_work_email"), contactEmpWorkEmail);
+	  
+	  log.info("Contact Details 04 - Step 28: Verify 'Other Email' textbox add successfully");
+	  assertEquals(myInforPage.getTextboxValueByID(driver, "contact_emp_oth_emaill"), contactEmpOtherEmail);
 	  
   }
   
@@ -210,6 +404,6 @@ public class Level_19_Live_Coding extends BaseTest{
 	AddEmployeePO addEmployeePage;
 	DashboardPO dashboardPage; 
 	EmployeeListPO employeeListPage;
-	MyInfoPO personalDetailPage;
+	MyInfoPO myInforPage;
 	
 }

@@ -24,6 +24,9 @@ import pageObject.portal.nopCommerce.UserAddressPageObject;
 import pageObject.portal.nopCommerce.UserCustomerInfoPageObject;
 import pageObject.portal.nopCommerce.UserMyProductReviewPageObject;
 import pageObject.portal.nopCommerce.UserRewardPointPageObject;
+import pageObjects.hrm.DashboardPO;
+import pageObjects.hrm.LoginPO;
+import pageObjects.hrm.pageGenerator;
 import pageObjects.liveGuru.AccountInformationPageObject;
 import pageObjects.liveGuru.AddressBookPageObject;
 import pageObjects.liveGuru.BilingAgreementPageObject;
@@ -31,6 +34,7 @@ import pageObjects.liveGuru.MyOrdersPageObject;
 import pageObjects.liveGuru.PageGeneratorManager_Live_Guru;
 import pageObjects.liveGuru.RecurringProfilesPageObject;
 import pageUIs.hrm.BasePageUI;
+import pageUIs.hrm.MyInfoPageUI;
 import pageUIs.jQuery.uploadFile.BasePageJQueryUI;
 import pageUIs.liveGuru.BasePageUI_Live_Guru;
 import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
@@ -377,6 +381,7 @@ public class BasePage {
 		return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).isEnabled();
 	}
 	
+	
 	public boolean isElementSelected(WebDriver driver, String locatorType) {
 		return getWebElement(driver, locatorType).isSelected();
 	}
@@ -473,20 +478,6 @@ public class BasePage {
 		
 		return status;
 	}
-	
-	public boolean isJQueryAJAXLoadedSuccess(WebDriver driver) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
-		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		ExpectedCondition <Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
-	
-		        @Override
-		        public Boolean apply(WebDriver driver) {
-		            return (Boolean) jsExecutor.executeScript("return (window.jQuery != null) && (jQuery.active === 0);");
-		        }
-		    };
-		    return explicitWait.until(jQueryLoad);
-		  }
-
 		
 	public boolean isJQueryAjaxLoadedSuccess(WebDriver driver) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
@@ -494,7 +485,7 @@ public class BasePage {
 		ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
 			@Override 
 			public Boolean apply(WebDriver driver) {
-				return (Boolean) jsExecutor.executeScript("return (windown.jQuery != null) && (jQuery.active == 0);");
+				return (Boolean) jsExecutor.executeScript("return (window.jQuery != null) && (jQuery.active == 0);");
 			}
 		};
 		
@@ -571,6 +562,11 @@ public class BasePage {
 		}
 		fullFileName = fullFileName.trim();
 		getWebElement(driver, BasePageJQueryUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
+	}
+	
+	public void uploadImage(WebDriver driver, String filePath) {
+		//Dung ham nay vi ko fai la textbox
+		getWebElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(filePath);
 	}
 	
 	//Toi uu o lession Level 07 Switch Page
@@ -727,6 +723,8 @@ public class BasePage {
 	public void openMenuPage(WebDriver driver, String menuPageName) {
 		waitForElementClickable(driver, BasePageUI.MENU_BY_PAGE_NAME, menuPageName);
 		clickToElement(driver, BasePageUI.MENU_BY_PAGE_NAME, menuPageName);
+		
+		isJQueryAjaxLoadedSuccess(driver);
 	}
 	
 	public void openSubMenuPage(WebDriver driver, String menuPageName, String subMenuPageName) {
@@ -735,6 +733,8 @@ public class BasePage {
 		
 		waitForElementClickable(driver, BasePageUI.MENU_BY_PAGE_NAME, subMenuPageName);
 		clickToElement(driver, BasePageUI.MENU_BY_PAGE_NAME, subMenuPageName);
+		
+		isJQueryAjaxLoadedSuccess(driver);
 	}
 	
 	public void openchildSubMenuPage(WebDriver driver, String menuPageName, String subMenuPageName, String childSubMenuPageName) {
@@ -747,6 +747,8 @@ public class BasePage {
 		
 		waitForElementClickable(driver, BasePageUI.MENU_BY_PAGE_NAME, childSubMenuPageName);
 		clickToElement(driver, BasePageUI.MENU_BY_PAGE_NAME, childSubMenuPageName);	
+
+		isJQueryAjaxLoadedSuccess(driver);
 	}
 	
 	//HRM click to Button dynamic
@@ -786,7 +788,7 @@ public class BasePage {
 	 * @author Khan Nguyen
 	 */
 	public String getSelectedValueInDropdownByID(WebDriver driver, String dropDownID) {
-		waitForElementClickable(driver, BasePageUI.DROPDOWN_BY_ID, dropDownID);
+		waitForElementVisible(driver, BasePageUI.DROPDOWN_BY_ID, dropDownID);
 		return getSelectedItemDefaultDropdown(driver, BasePageUI.DROPDOWN_BY_ID, dropDownID);
 	}
 	
@@ -812,6 +814,12 @@ public class BasePage {
 		checkToDefaultCheckboxOrRadio(driver, BasePageUI.RADIO_BY_LABEL, radioLabelName);
 	}
 	
+	public boolean isRadioButtonSelectedByLabel(WebDriver driver, String lableName) {
+		waitForElementVisible(driver, BasePageUI.RADIO_BY_LABEL, lableName);
+		return isElementSelected(driver, BasePageUI.RADIO_BY_LABEL, lableName);
+	}
+	
+	
 	//Video 18 - 60 at 1:58' 
 	public String getValueInTableIDAtColumnNameAndRowIndex(WebDriver driver, String tableID, String headerName, String rowIndex) {
 		int columnIndex = getElementSize(driver, BasePageUI.TABLE_HEADER_BY_ID_AND_NAME, tableID, headerName) +1;
@@ -819,6 +827,42 @@ public class BasePage {
 		return getElementText(driver, BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, tableID, rowIndex, String.valueOf(columnIndex));
 	}
 		
+	public LoginPO logoutToSystem(WebDriver driver) {
+		waitForElementVisible(driver, BasePageUI.WELCOME_USER_LINK);
+		clickToElement(driver, BasePageUI.WELCOME_USER_LINK);
+		
+		waitForElementVisible(driver, BasePageUI.LOGOUT_LINK);
+		clickToElement(driver, BasePageUI.LOGOUT_LINK);
+		
+		return pageGenerator.getLoginPage(driver);
+	}
+	
+	public DashboardPO loginToSystem(WebDriver driver, String userName, String password) {
+		waitForElementVisible(driver, BasePageUI.USER_LOGIN_TEXTBOX);
+		sendkeyToElement(driver, BasePageUI.USER_LOGIN_TEXTBOX, userName);
+		
+		//Do userName visible nen chac chan Password & Login btn se visible
+		//waitForElementVisible(driver, BasePageUI.USER_PASSWORD_TEXTBOX);
+		sendkeyToElement(driver, BasePageUI.USER_PASSWORD_TEXTBOX, password);
+		
+		//waitForElementVisible(driver, BasePageUI.LOGIN_BUTTON);
+		clickToElement(driver, BasePageUI.LOGIN_BUTTON);
+		
+		return pageGenerator.getDashboardPage(driver);
+	}
+	
+	public boolean isSuccessMessageDisplay(WebDriver driver, String messageValue) {
+		waitForElementVisible(driver, BasePageUI.SUCCESS_MESSAGE_VALUE, messageValue);
+		return isElementDisplayed(driver, BasePageUI.SUCCESS_MESSAGE_VALUE, messageValue);
+		
+	}
+	
+	public boolean isFieldEnableByName(WebDriver driver, String fieldID) {
+		waitForElementVisible(driver, BasePageUI.ANY_FIELD_BY_ID, fieldID);
+		return isElementEnabled(driver, BasePageUI.ANY_FIELD_BY_ID, fieldID);
+	}
+
+	
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 	private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
 	
