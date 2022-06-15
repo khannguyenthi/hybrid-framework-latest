@@ -187,21 +187,43 @@ public class BasePage {
 	}
 	
 	public void clickToElement(WebDriver driver, String locatorType) {
-		getWebElement(driver, locatorType).click(); 
+		hightlightElement(driver, locatorType);
+		if(driver.toString().contains("internet explore")) {
+			clickToElementByJS(driver, locatorType);
+			
+			//Button/ link/ radio/ checkbox
+			sleepInSecond(2);
+		} else {
+			//Chrome/ Firefox/ Safari/ Edge
+			getWebElement(driver, locatorType).click(); 
+		}
 	}
 	
 	public void clickToElement(WebDriver driver, String locatorType, String...dynamicValues) {
-		locatorType = getDynamicXpath(locatorType, dynamicValues);
-		getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).click(); 
+		hightlightElement(driver, locatorType, dynamicValues);
+		//locatorType = getDynamicXpath(locatorType, dynamicValues);
+		//getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).click(); 
+		if(driver.toString().contains("internet explore")) {
+			clickToElementByJS(driver, getDynamicXpath(locatorType, dynamicValues));
+			
+			//Button/ link/ radio/ checkbox
+			sleepInSecond(2);
+		} else {
+			//Chrome/ Firefox/ Safari/ Edge
+			getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).click(); 
+		}
+		
 	}
 	
 	public void sendkeyToElement(WebDriver driver, String locatorType, String textValues) {
+		hightlightElement(driver, locatorType);
 		WebElement element = getWebElement(driver, locatorType);
 		element.clear();
 		element.sendKeys(textValues);
 	}
 	
 	public void sendkeyToElement(WebDriver driver, String locatorType, String textValues, String...dynamicValues) {
+		hightlightElement(driver, locatorType, dynamicValues);
 		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
 		element.clear();
 		element.sendKeys(textValues);
@@ -215,6 +237,7 @@ public class BasePage {
 		return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).getText().trim();
 	}
 	
+	//Select value in dropdown base text
 	public void selectItemInDefaultDropdown(WebDriver driver, String locatorType, String textItem) {
 		Select select = new Select(getWebElement(driver, locatorType));
 		select.selectByVisibleText(textItem);
@@ -426,6 +449,14 @@ public class BasePage {
 	public void hightlightElement(WebDriver driver, String locatorType) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		WebElement element = getWebElement(driver, locatorType);
+		String originalStyle = element.getAttribute("style");
+		jsExecutor.executeScript("arguments[0].setAttribute('style', arguments[1])", element, "border: 2px solid red; border-style: dashed;");
+		sleepInSecond(1);
+		jsExecutor.executeScript("arguments[0].setAttribute('style', arguments[1])", element, originalStyle);
+	}
+	public void hightlightElement(WebDriver driver, String locatorType, String...dynamicValues) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
 		String originalStyle = element.getAttribute("style");
 		jsExecutor.executeScript("arguments[0].setAttribute('style', arguments[1])", element, "border: 2px solid red; border-style: dashed;");
 		sleepInSecond(1);

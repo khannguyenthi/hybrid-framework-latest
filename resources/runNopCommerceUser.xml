@@ -15,7 +15,7 @@
   	<parameter name="browser" value="firefox" > </parameter>
     <classes>
     <!--  Trigger Common 01 run first -->
-         <class name="com.nopcommerce.user.Level_18_Pattern_Object"/>
+         <class name="com.nopcommerce.user.Level_14_Log_ReportNG"/>
        </classes>
   </test>
 </suite> 

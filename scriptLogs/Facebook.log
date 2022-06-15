@@ -510,3 +510,208 @@
 [2022-05-05 09:53:51,101] My Account - Step 03: Verify firstName value is correctly
 [2022-05-05 09:53:51,146] My Account - Step 04: Verify lastName value is correctly
 [2022-05-05 09:53:51,194] My Account - Step 05: Verify emailAddress value is correctly
+[2022-05-29 05:41:06,844] Register - Step 01: Navigate to 'Register page'
+[2022-05-29 05:41:08,383] Register - Step 02: Enter to Firstname textbox with value is 'Khan'
+[2022-05-29 05:41:08,738] Register - Step 02: Enter to Lastname textbox with value is 'Auto'
+[2022-05-29 05:41:08,825] Register - Step 02: Enter to Emailaddress textbox with value is 'khan8830@gmail.com'
+[2022-05-29 05:41:08,922] Register - Step 02: Enter to Password textbox with value is '123456'
+[2022-05-29 05:41:09,001] Register - Step 02: Enter to Confirm Password textbox with value is '123456'
+[2022-05-29 05:41:09,094] Register - Step 03: Click Register Button
+[2022-05-29 05:41:10,230] Register - Step 04: Verify success message displayed...
+[2022-05-29 05:41:10,341] Register - Step 05: Click logout link
+[2022-05-29 05:41:11,262] Login - Step 06: Click Login link
+[2022-05-29 05:41:12,312] Login - Step 07: Click Login link
+[2022-05-29 05:41:12,452] Login - Step 08: Click Login link
+[2022-05-29 05:41:13,386] Login - Step 09: Verify My Account link display
+[2022-05-29 05:41:13,501] Login - Step 09: Verify Customer Info link display
+[2022-05-29 05:43:14,444] Register - Step 01: Navigate to 'Register page'
+[2022-05-29 05:43:15,437] Register - Step 02: Enter to Firstname textbox with value is 'Khan'
+[2022-05-29 05:43:15,561] Register - Step 02: Enter to Lastname textbox with value is 'Auto'
+[2022-05-29 05:43:15,652] Register - Step 02: Enter to Emailaddress textbox with value is 'khan4785@gmail.com'
+[2022-05-29 05:43:15,777] Register - Step 02: Enter to Password textbox with value is '123456'
+[2022-05-29 05:43:15,873] Register - Step 02: Enter to Confirm Password textbox with value is '123456'
+[2022-05-29 05:43:15,954] Register - Step 03: Click Register Button
+[2022-05-29 05:43:17,081] Register - Step 04: Verify success message displayed...
+[2022-05-29 05:43:17,167] Register - Step 05: Click logout link
+[2022-05-29 05:43:18,071] Login - Step 06: Click Login link
+[2022-05-29 05:43:18,887] Login - Step 07: Click Login link
+[2022-05-29 05:43:19,063] Login - Step 08: Click Login link
+[2022-05-29 05:43:20,058] Login - Step 09: Verify My Account link display
+[2022-05-29 05:43:20,147] Login - Step 09: Verify Customer Info link display
+[2022-06-11 17:33:16,197] Pre-condition - Step 01: Open browser 'FIREFOX' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-11 17:33:33,285] Pre-condition - Step 02: Login with admin role
+[2022-06-11 17:33:39,158] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-11 17:34:18,084] Upload_Avatar_02 - Step 01: Login with employee role
+[2022-06-11 17:34:18,201] Work Experience 10 - Step 01: Click to 'Qualifications' tab at side bar
+[2022-06-11 17:34:18,310] OS name = windows 10
+[2022-06-11 17:34:18,311] Driver instance name = firefoxdriver: firefox on windows (708e5f08-d466-4efe-b3cd-fd850c833364)
+[2022-06-11 18:31:37,104] Pre-condition - Step 01: Open browser 'FIREFOX' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-11 18:31:58,592] Pre-condition - Step 02: Login with admin role
+[2022-06-11 18:32:08,800] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-11 18:32:16,361] Add_New_01 - Step 02: Click to 'Add' button
+[2022-06-11 18:32:18,608] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-06-11 18:32:19,811] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-06-11 18:32:20,971] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-06-11 18:32:24,026] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-06-11 18:32:24,343] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-06-11 18:32:25,470] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-06-11 18:32:26,662] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-06-11 18:32:27,795] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-06-11 18:32:27,871] Add_New_01 - Step 11: Click to 'Save' button
+[2022-06-11 18:32:33,461] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-06-11 18:32:38,615] Add_New_01 - Step 13: Enter valid info to 'Employee Name' textbox
+[2022-06-11 18:32:41,782] Add_New_01 - Step 14: Click to 'Search' button
+[2022-06-11 18:32:44,444] Add_New_01 - Step 15: Verify Employee Information displayed at 'Result Table'
+[2022-06-11 18:32:44,452] Upload_Avatar_02 - Step 01: Login with employee role
+[2022-06-11 18:32:55,067] Upload_Avatar_02 - Step 02: Open 'My Info' menu page
+[2022-06-11 18:32:59,366] Upload_Avatar_02 - Step 03: Click to Change Photo Image
+[2022-06-11 18:33:01,772] Upload_Avatar_02 - Step 04: Upload new avatar image
+[2022-06-11 18:33:01,804] Upload_Avatar_02 - Step 05: Click to Upload button
+[2022-06-11 18:33:12,999] Upload_Avatar_02 - Step 06: Verify success message is displayed
+[2022-06-11 18:33:33,196] Work Experience 10 - Step 01: Click to 'Qualifications' tab at side bar
+[2022-06-11 18:33:36,664] Work Experience 10 - Step 02: Click to 'Add' button at 'Add Work Experience' form
+[2022-06-11 18:33:38,031] Work Experience 10 - Step 03: Enter new value to 'Company' textbox
+[2022-06-11 18:33:39,178] Work Experience 10 - Step 04: Enter new value to 'Job Title' textbox
+[2022-06-11 18:33:40,326] Work Experience 10 - Step 05: Enter new value to 'From' textbox
+[2022-06-11 18:33:41,542] Work Experience 10 - Step 06: Enter new value to 'To' textbox
+[2022-06-11 18:33:42,711] Work Experience 10 - Step 07: Enter new value to 'Comment' textbox
+[2022-06-11 18:34:02,838] OS name = windows 10
+[2022-06-11 18:34:02,838] Driver instance name = firefoxdriver: firefox on windows (cfd1bb7d-6d03-4063-9a25-f8a254d435e7)
+[2022-06-11 22:25:40,496] OS name = windows 10
+[2022-06-11 22:25:40,516] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 22:27:54,063] OS name = windows 10
+[2022-06-11 22:27:54,064] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 22:31:10,600] OS name = windows 10
+[2022-06-11 22:31:10,601] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 22:32:04,634] OS name = windows 10
+[2022-06-11 22:32:04,635] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 22:33:44,432] Pre-condition - Step 01: Open browser 'FIREFOX' and navigate to 'null'
+[2022-06-11 22:34:23,079] OS name = windows 10
+[2022-06-11 22:34:23,080] Driver instance name = firefoxdriver: firefox on windows (e322cc7a-b071-4491-a1b1-bcb5176fa06e)
+[2022-06-11 22:36:40,357] Pre-condition - Step 01: Open browser 'FIREFOX' and navigate to 'null'
+[2022-06-11 22:36:48,872] OS name = windows 10
+[2022-06-11 22:36:48,872] Driver instance name = firefoxdriver: firefox on windows (7fe53f84-62a1-4e00-8d5c-ce431cef79a5)
+[2022-06-11 22:37:25,786] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'null'
+[2022-06-11 22:37:44,641] OS name = windows 10
+[2022-06-11 22:37:44,642] Driver instance name = chromedriver: chrome on windows (a42b985e59f9c7b0df47f27757fdb02a)
+[2022-06-11 22:42:28,288] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'null'
+[2022-06-11 22:42:30,830] OS name = windows 10
+[2022-06-11 22:42:30,830] Driver instance name = chromedriver: chrome on windows (564214625e35ee50ce792a70d3641117)
+[2022-06-11 22:45:51,660] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'null'
+[2022-06-11 22:45:54,478] OS name = windows 10
+[2022-06-11 22:45:54,479] Driver instance name = chromedriver: chrome on windows (8df5f232c9318e205982220220d4caf2)
+[2022-06-11 22:47:48,775] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'null'
+[2022-06-11 22:47:51,276] OS name = windows 10
+[2022-06-11 22:47:51,276] Driver instance name = chromedriver: chrome on windows (2176400046822e189c2f72ac33b15db6)
+[2022-06-11 22:48:47,024] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'null'
+[2022-06-11 22:48:49,481] OS name = windows 10
+[2022-06-11 22:48:49,511] Driver instance name = chromedriver: chrome on windows (04001a717126f8896f87f81338ad6bb6)
+[2022-06-11 22:49:30,105] Pre-condition - Step 01: Open browser 'C' and navigate to 'null'
+[2022-06-11 22:49:30,184] OS name = windows 10
+[2022-06-11 22:49:30,184] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 22:57:15,047] Pre-condition - Step 01: Open browser 'C' and navigate to 'null'
+[2022-06-11 22:57:15,118] OS name = windows 10
+[2022-06-11 22:57:15,119] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 22:59:19,472] Pre-condition - Step 01: Open browser 'C' and navigate to 'null'
+[2022-06-11 22:59:19,532] OS name = windows 10
+[2022-06-11 22:59:19,533] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 23:04:22,685] OS name = windows 10
+[2022-06-11 23:04:22,687] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 23:05:14,503] OS name = windows 10
+[2022-06-11 23:05:14,507] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 23:05:52,852] Pre-condition - Step 01: Open browser 'C' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-11 23:05:52,898] OS name = windows 10
+[2022-06-11 23:05:52,898] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 23:06:50,907] Pre-condition - Step 01: Open browser 'C' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-11 23:06:50,958] OS name = windows 10
+[2022-06-11 23:06:50,958] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 23:07:37,890] Pre-condition - Step 01: Open browser 'C' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-11 23:07:37,942] OS name = windows 10
+[2022-06-11 23:07:37,942] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 23:08:39,799] OS name = windows 10
+[2022-06-11 23:08:39,801] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 23:10:11,829] Pre-condition - Step 01: Open browser 'C' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-11 23:10:11,877] OS name = windows 10
+[2022-06-11 23:10:11,877] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-11 23:10:52,865] Pre-condition - Step 01: Open browser 'C' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-11 23:10:52,912] OS name = windows 10
+[2022-06-11 23:10:52,913] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-12 06:38:17,108] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-12 06:38:27,215] OS name = windows 10
+[2022-06-12 06:38:27,216] Driver instance name = chromedriver: chrome on windows (0392e0d163e130af088a708714aca2c4)
+[2022-06-12 06:39:29,729] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-12 06:39:38,956] Pre-condition - Step 02: Login with admin role
+[2022-06-12 06:39:48,736] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-12 06:39:55,621] Add_New_01 - Step 02: Click to 'Add' button
+[2022-06-12 06:39:57,908] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-06-12 06:39:59,147] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-06-12 06:40:00,373] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-06-12 06:40:03,448] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-06-12 06:40:03,585] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-06-12 06:40:04,810] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-06-12 06:40:06,086] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-06-12 06:40:07,351] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-06-12 06:40:07,453] Add_New_01 - Step 11: Click to 'Save' button
+[2022-06-12 06:40:11,519] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-06-12 06:40:19,385] Add_New_01 - Step 13: Enter valid info to 'Employee Name' textbox
+[2022-06-12 06:40:20,687] Add_New_01 - Step 14: Click to 'Search' button
+[2022-06-12 06:40:23,721] OS name = windows 10
+[2022-06-12 06:40:23,721] Driver instance name = chromedriver: chrome on windows (847259c6ff4070c6c2c31b871bb9cda1)
+[2022-06-12 06:50:23,423] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-12 06:50:37,309] Pre-condition - Step 02: Login with admin role
+[2022-06-12 06:50:47,236] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-12 06:50:54,409] Add_New_01 - Step 02: Click to 'Add' button
+[2022-06-12 06:50:56,708] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-06-12 06:50:57,952] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-06-12 06:50:59,179] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-06-12 06:51:02,250] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-06-12 06:51:02,397] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-06-12 06:51:03,640] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-06-12 06:51:04,879] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-06-12 06:51:06,132] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-06-12 06:51:06,231] Add_New_01 - Step 11: Click to 'Save' button
+[2022-06-12 06:51:08,948] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-06-12 06:51:17,318] Add_New_01 - Step 13: Enter valid info to 'Employee Name' textbox
+[2022-06-12 06:51:18,625] Add_New_01 - Step 14: Click to 'Search' button
+[2022-06-12 06:51:21,943] OS name = windows 10
+[2022-06-12 06:51:21,944] Driver instance name = chromedriver: chrome on windows (419b9422af476f221bff99e991e55904)
+[2022-06-12 07:28:19,905] Pre-condition - Step 02: Login with admin role
+[2022-06-12 07:28:28,977] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-12 07:28:39,312] Add_New_01 - Step 02: Click to 'Add' button
+[2022-06-12 07:28:41,574] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-06-12 07:28:42,861] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-06-12 07:28:44,096] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-06-12 07:28:47,160] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-06-12 07:28:47,316] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-06-12 07:28:48,548] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-06-12 07:28:49,790] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-06-12 07:28:51,057] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-06-12 07:28:51,161] Add_New_01 - Step 11: Click to 'Save' button
+[2022-06-12 07:28:53,737] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-06-12 07:29:00,279] Add_New_01 - Step 13: Enter valid info to 'Employee Name' textbox
+[2022-06-12 07:29:01,609] Add_New_01 - Step 14: Click to 'Search' button
+[2022-06-12 07:29:04,708] OS name = windows 10
+[2022-06-12 07:29:04,709] Driver instance name = chromedriver: chrome on windows (5b259a914ee1e1b54ecd564376b7cbe1)
+[2022-06-12 07:29:56,304] Pre-condition - Step 02: Login with admin role
+[2022-06-12 07:30:06,867] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-12 07:30:18,036] Add_New_01 - Step 02: Click to 'Add' button
+[2022-06-12 07:30:20,638] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-06-12 07:30:21,890] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-06-12 07:30:23,122] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-06-12 07:30:26,182] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-06-12 07:30:26,320] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-06-12 07:30:27,560] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-06-12 07:30:28,801] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-06-12 07:30:30,075] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-06-12 07:30:30,181] Add_New_01 - Step 11: Click to 'Save' button
+[2022-06-12 07:30:32,617] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-06-12 07:30:38,786] Add_New_01 - Step 13: Enter valid info to 'Employee Name' textbox
+[2022-06-12 07:30:40,098] Add_New_01 - Step 14: Click to 'Search' button
+[2022-06-12 07:30:42,565] OS name = windows 10
+[2022-06-12 07:30:42,566] Driver instance name = chromedriver: chrome on windows (0e50194abc90d2f307762e002c68d38a)
+[2022-06-12 07:37:30,960] Pre-condition - Step 02: Login with admin role
+[2022-06-12 07:37:51,082] OS name = windows 10
+[2022-06-12 07:37:51,082] Driver instance name = chromedriver: chrome on windows (fc017e6a277a4027ad6f3ef4567714c8)
+[2022-06-12 07:44:47,191] Pre-condition - Step 02: Login with admin role
+[2022-06-12 07:45:07,342] OS name = windows 10
+[2022-06-12 07:45:07,343] Driver instance name = chromedriver: chrome on windows (9d4e8124c261aed06b23677463e3b1d1)
