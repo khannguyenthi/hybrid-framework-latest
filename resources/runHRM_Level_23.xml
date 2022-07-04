@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="HRM">
+
+  <parameter name= "url" value="testing" />
+
+<listeners>
+	<listener class-name="commons.MethodListener" />
+ <listener class-name="reportConfig.ReportNGListener" />  
+<!--	<listener class-name="reportConfig.ExtentTestListener" /> -->
+	<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+
+  <test name="Run on CHROME">
+  	<parameter name="browser" value="CHROME" > </parameter>
+    <classes>
+    <!--  Trigger Common 01 run first -->
+         <class name="com.hrm.employee.Level_23_Multiple_Environment"/>
+       </classes>
+  </test>
+</suite> 
+

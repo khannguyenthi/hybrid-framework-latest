@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Sauce Lab" parallel="tests" thread-count="2">
+
+<listeners>
+	<listener class-name="commons.MethodListener" />
+ <listener class-name="reportConfig.ReportNGListener" />  
+<!--	<listener class-name="reportConfig.ExtentTestListener" /> -->
+	<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+<parameter name= "envName" value="local" />
+<parameter name= "serverName" value="dev" />
+  
+  <test name="Run on FIREFOX">
+  	<parameter name="browser" value="FIREFOX" > </parameter>
+    <classes>
+    <!--  Trigger Common 01 run first -->
+         <class name="com.saucelab.sort.Level_25_Sort_Local_I"/>
+       </classes>
+  </test>
+    
+   <test name="Run on CHROME">
+  	<parameter name="browser" value="CHROME" > </parameter>
+    <classes>
+    <!--  Trigger Common 01 run first -->
+         <class name="com.saucelab.sort.Level_25_Sort_Local_I"/>
+       </classes>
+       
+  </test>  
+</suite> 
+
+
