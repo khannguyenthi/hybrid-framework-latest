@@ -1,4 +1,4 @@
-package commons;
+package factoryEnvironment;
 
 public enum EnvironmentList {
 	DEV, TESTING, STAGING, PRODUCTION;

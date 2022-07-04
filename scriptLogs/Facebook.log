@@ -715,3 +715,183 @@
 [2022-06-12 07:44:47,191] Pre-condition - Step 02: Login with admin role
 [2022-06-12 07:45:07,342] OS name = windows 10
 [2022-06-12 07:45:07,343] Driver instance name = chromedriver: chrome on windows (9d4e8124c261aed06b23677463e3b1d1)
+[2022-06-15 21:40:29,268] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'testing'
+[2022-06-15 21:40:34,920] OS name = windows 10
+[2022-06-15 21:40:34,921] Driver instance name = chromedriver: chrome on windows (87ff382c9fb6b9aee5940c6be788c699)
+[2022-06-15 21:41:44,183] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-15 21:41:51,746] Pre-condition - Step 02: Login with admin role
+[2022-06-15 21:42:08,018] Employee_Search_01 - Step 01: Get Employee size on UI
+[2022-06-15 21:42:08,018] Employee_Search_02 - Step 02: Get Employee size in DB
+[2022-06-15 21:42:14,419] Employee_Search_03 - Step 03: Verify Employee size in UI and DB equal
+[2022-06-15 21:42:14,425] OS name = windows 10
+[2022-06-15 21:42:14,425] Driver instance name = chromedriver: chrome on windows (1e3812426a3c208ffedac2f1a34903b4)
+[2022-06-15 21:42:30,820] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-15 21:42:38,954] Pre-condition - Step 02: Login with admin role
+[2022-06-15 21:42:46,463] Employee_Search_01 - Step 01: Get Employee size on UI
+[2022-06-15 21:42:46,463] Employee_Search_02 - Step 02: Get Employee size in DB
+[2022-06-15 21:42:52,651] Employee_Search_03 - Step 03: Verify Employee size in UI and DB equal
+[2022-06-15 21:42:52,656] OS name = windows 10
+[2022-06-15 21:42:52,657] Driver instance name = chromedriver: chrome on windows (d82db1b658e376252e7b58dc77d70cab)
+[2022-06-15 21:43:22,456] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-15 21:43:29,787] Pre-condition - Step 02: Login with admin role
+[2022-06-15 21:43:48,152] Employee_Search_01 - Step 01: Get Employee size on UI
+[2022-06-15 21:43:48,152] Employee_Search_02 - Step 02: Get Employee size in DB
+[2022-06-15 21:43:54,350] Employee_Search_03 - Step 03: Verify Employee size in UI and DB equal
+[2022-06-15 21:43:54,686] OS name = windows 10
+[2022-06-15 21:43:54,686] Driver instance name = chromedriver: chrome on windows (8a62d8c2db1650207dcd2e9794de3565)
+[2022-06-15 21:47:16,106] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-15 21:47:24,065] Pre-condition - Step 02: Login with admin role
+[2022-06-15 21:47:45,095] Employee_Search_01 - Step 01: Get Employee size on UI
+[2022-06-15 21:47:45,096] Employee_Search_02 - Step 02: Get Employee size in DB
+[2022-06-15 21:47:51,299] Employee_Search_03 - Step 03: Verify Employee size in UI and DB equal
+[2022-06-15 21:47:51,562] OS name = windows 10
+[2022-06-15 21:47:51,563] Driver instance name = chromedriver: chrome on windows (6a33fffafb07450b54010e13e140760c)
+[2022-06-26 15:41:38,289] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-26 15:43:05,172] Pre-condition - Step 02: Login with admin role
+[2022-06-26 15:43:15,200] Employee_Search_01 - Step 01: Get Employee size on UI
+[2022-06-26 15:43:15,200] Employee_Search_02 - Step 02: Get Employee size in DB
+[2022-06-26 15:43:21,811] Employee_Search_03 - Step 03: Verify Employee size in UI and DB equal
+[2022-06-26 15:43:22,078] OS name = windows 10
+[2022-06-26 15:43:22,078] Driver instance name = chromedriver: chrome on windows (6a17306c360e358212d8b239bd99d8eb)
+[2022-06-26 15:45:43,218] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-26 15:55:44,355] OS name = windows 10
+[2022-06-26 15:55:44,355] Cannot invoke "Object.toString()" because "this.driver" is null
+[2022-06-26 16:01:43,442] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-26 16:01:53,588] Pre-condition - Step 02: Login with admin role
+[2022-06-26 16:02:06,086] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-26 16:02:13,453] Add_New_01 - Step 02: Click to 'Add' button
+[2022-06-26 16:02:15,618] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-06-26 16:02:16,918] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-06-26 16:02:18,139] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-06-26 16:02:21,210] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-06-26 16:02:21,369] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-06-26 16:02:22,614] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-06-26 16:02:23,899] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-06-26 16:02:25,173] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-06-26 16:02:25,301] Add_New_01 - Step 11: Click to 'Save' button
+[2022-06-26 16:02:29,111] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-06-26 16:02:34,816] Add_New_01 - Step 13: Enter valid info to 'Employee Name' textbox
+[2022-06-26 16:02:36,309] Add_New_01 - Step 14: Click to 'Search' button
+[2022-06-26 16:02:40,676] OS name = windows 10
+[2022-06-26 16:02:40,677] Driver instance name = remotewebdriver: chrome on windows (65f9716ba07b7b1713fc6386c37789b1)
+[2022-06-26 16:15:03,775] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-26 16:15:18,733] Pre-condition - Step 02: Login with admin role
+[2022-06-26 16:15:27,915] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-26 16:15:38,802] Add_New_01 - Step 02: Click to 'Add' button
+[2022-06-26 16:15:47,742] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-06-26 16:15:49,009] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-06-26 16:15:50,252] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-06-26 16:15:53,327] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-06-26 16:15:53,497] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-06-26 16:15:54,780] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-06-26 16:15:56,029] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-06-26 16:15:57,289] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-06-26 16:15:57,389] Add_New_01 - Step 11: Click to 'Save' button
+[2022-06-26 16:15:58,583] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-06-26 16:16:01,360] OS name = windows 10
+[2022-06-26 16:16:01,361] Driver instance name = chromedriver: chrome on windows (5738273bb46bb49aec745134d775cde2)
+[2022-06-26 16:16:44,066] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-26 16:16:55,919] Pre-condition - Step 02: Login with admin role
+[2022-06-26 16:17:07,942] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-26 16:17:19,360] Add_New_01 - Step 02: Click to 'Add' button
+[2022-06-26 16:17:23,459] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-06-26 16:17:24,734] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-06-26 16:17:25,973] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-06-26 16:17:29,049] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-06-26 16:17:29,212] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-06-26 16:17:30,450] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-06-26 16:17:31,718] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-06-26 16:17:32,947] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-06-26 16:17:33,063] Add_New_01 - Step 11: Click to 'Save' button
+[2022-06-26 16:17:35,686] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-06-26 16:17:43,719] Add_New_01 - Step 13: Enter valid info to 'Employee Name' textbox
+[2022-06-26 16:17:45,133] Add_New_01 - Step 14: Click to 'Search' button
+[2022-06-26 16:17:50,909] OS name = windows 10
+[2022-06-26 16:17:50,910] Driver instance name = chromedriver: chrome on windows (f06b64278aa43ab1490bd9e4509951d7)
+[2022-06-28 20:59:05,169] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-28 20:59:18,592] Pre-condition - Step 02: Login with admin role
+[2022-06-28 20:59:28,116] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-28 20:59:35,279] Add_New_01 - Step 02: Click to 'Add' button
+[2022-06-28 20:59:41,677] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-06-28 20:59:42,963] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-06-28 20:59:44,196] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-06-28 20:59:47,253] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-06-28 20:59:47,421] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-06-28 20:59:48,719] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-06-28 20:59:50,016] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-06-28 20:59:51,256] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-06-28 20:59:51,355] Add_New_01 - Step 11: Click to 'Save' button
+[2022-06-28 20:59:52,528] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-06-28 21:00:25,337] OS name = windows 10
+[2022-06-28 21:00:25,338] Driver instance name = chromedriver: chrome on windows (2081426dfd4ad2e3c3e68a21484ce459)
+[2022-06-28 21:01:32,412] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-28 21:01:40,084] Pre-condition - Step 02: Login with admin role
+[2022-06-28 21:01:48,588] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-28 21:01:55,289] Add_New_01 - Step 02: Click to 'Add' button
+[2022-06-28 21:02:05,506] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-06-28 21:02:06,774] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-06-28 21:02:08,024] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-06-28 21:02:11,107] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-06-28 21:02:11,300] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-06-28 21:02:12,540] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-06-28 21:02:13,789] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-06-28 21:02:15,063] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-06-28 21:02:15,191] Add_New_01 - Step 11: Click to 'Save' button
+[2022-06-28 21:02:16,414] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-06-28 21:02:30,310] Add_New_01 - Step 13: Enter valid info to 'Employee Name' textbox
+[2022-06-28 21:02:31,609] Add_New_01 - Step 14: Click to 'Search' button
+[2022-06-28 21:02:48,196] OS name = windows 10
+[2022-06-28 21:02:48,196] Driver instance name = chromedriver: chrome on windows (1bd5547c053f3f6030601e46803f4308)
+[2022-06-28 21:03:47,024] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-28 21:03:55,121] Pre-condition - Step 02: Login with admin role
+[2022-06-28 21:04:04,670] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-28 21:04:15,284] Add_New_01 - Step 02: Click to 'Add' button
+[2022-06-28 21:04:20,277] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-06-28 21:04:21,571] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-06-28 21:04:22,826] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-06-28 21:04:25,886] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-06-28 21:04:26,056] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-06-28 21:04:27,310] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-06-28 21:04:28,546] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-06-28 21:04:29,800] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-06-28 21:04:29,907] Add_New_01 - Step 11: Click to 'Save' button
+[2022-06-28 21:04:31,094] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-06-28 21:04:35,007] OS name = windows 10
+[2022-06-28 21:04:35,007] Driver instance name = chromedriver: chrome on windows (0380f537be92cc79776dfee5a04799a2)
+[2022-06-28 21:05:00,561] Pre-condition - Step 01: Open browser 'CHROME' and navigate to 'https://opensource-demo.orangehrmlive.com/'
+[2022-06-28 21:05:08,993] Pre-condition - Step 02: Login with admin role
+[2022-06-28 21:05:18,010] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-06-28 21:05:34,658] OS name = windows 10
+[2022-06-28 21:05:34,658] Driver instance name = chromedriver: chrome on windows (9f8f050f84c0d6e41171afca49d91643)
+[2022-07-02 21:25:38,289] Pre-condition - Step 02: Login with admin role
+[2022-07-02 21:25:47,608] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-07-02 21:25:54,287] Add_New_01 - Step 02: Click to 'Add' button
+[2022-07-02 21:26:00,739] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-07-02 21:26:02,023] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-07-02 21:26:03,237] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-07-02 21:26:06,312] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-07-02 21:26:06,474] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-07-02 21:26:07,714] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-07-02 21:26:09,013] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-07-02 21:26:10,278] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-07-02 21:26:10,373] Add_New_01 - Step 11: Click to 'Save' button
+[2022-07-02 21:26:11,580] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-07-02 21:26:17,346] Add_New_01 - Step 13: Enter valid info to 'Employee Name' textbox
+[2022-07-02 21:26:18,614] Add_New_01 - Step 14: Click to 'Search' button
+[2022-07-02 21:28:46,285] Pre-condition - Step 02: Login with admin role
+[2022-07-02 21:28:55,477] Add_New_01 - Step 01: Open 'Employee List' Page
+[2022-07-02 21:29:08,071] Add_New_01 - Step 02: Click to 'Add' button
+[2022-07-02 21:29:11,900] Add_New_01 - Step 03: Enter valid info to 'First Name' textbox
+[2022-07-02 21:29:13,178] Add_New_01 - Step 04: Enter valid info to 'Last Name' textbox
+[2022-07-02 21:29:14,436] Add_New_01 - Step 05: Get value of 'Employee ID'
+[2022-07-02 21:29:17,506] Add_New_01 - Step 06: Click to 'Create Login Details' checkbox
+[2022-07-02 21:29:17,711] Add_New_01 - Step 07: Enter valid info to 'User Name' textbox
+[2022-07-02 21:29:18,960] Add_New_01 - Step 08: Enter valid info to 'Password' textbox
+[2022-07-02 21:29:20,226] Add_New_01 - Step 09: Enter valid info to 'Confirm Password' textbox
+[2022-07-02 21:29:21,505] Add_New_01 - Step 10: Select 'Enabled' value in 'Status' dropdown
+[2022-07-02 21:29:21,602] Add_New_01 - Step 11: Click to 'Save' button
+[2022-07-02 21:29:32,342] Add_New_01 - Step 12: Open 'Employee List' Page after create employee successfully
+[2022-07-02 21:29:44,120] Add_New_01 - Step 13: Enter valid info to 'Employee Name' textbox
+[2022-07-02 21:29:45,604] Add_New_01 - Step 14: Click to 'Search' button
+[2022-07-02 21:29:54,700] OS name = windows 10
+[2022-07-02 21:29:54,702] Driver instance name = chromedriver: chrome on windows (ed759568a42dee14de9dccf8bf1578f1)

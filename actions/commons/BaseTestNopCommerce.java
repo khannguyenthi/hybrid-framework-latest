@@ -16,6 +16,8 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import factoryBrowser.BrowserList;
+import factoryEnvironment.EnvironmentList;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTestNopCommerce {
@@ -58,7 +60,7 @@ public class BaseTestNopCommerce {
 			 WebDriverManager.operadriver().setup();
 			 driver = new OperaDriver();
 		 }
-		 else if(browserList == BrowserList.EDGE) {
+		 else if(browserList == BrowserList.EDGE_CHROMIUM) {
 			 WebDriverManager.edgedriver().setup();
 			 driver = new EdgeDriver();
 		 } else {

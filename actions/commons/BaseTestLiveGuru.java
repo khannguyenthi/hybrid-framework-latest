@@ -13,6 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaDriver;
 
+import factoryBrowser.BrowserList;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTestLiveGuru {
@@ -54,7 +55,7 @@ public class BaseTestLiveGuru {
 			 WebDriverManager.operadriver().setup();
 			 driver = new OperaDriver();
 		 }
-		 else if(browserList == BrowserList.EDGE) {
+		 else if(browserList == BrowserList.EDGE_CHROMIUM) {
 			 WebDriverManager.edgedriver().setup();
 			 driver = new EdgeDriver();
 		 } else {

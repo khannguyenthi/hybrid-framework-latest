@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="HRM">
 
- <parameter name= "url" value="https://opensource-demo.orangehrmlive.com/" />
-
+<parameter name= "envName" value="local" />
+<parameter name= "serverName" value="dev" />
+ 
 <listeners>
 	<listener class-name="commons.MethodListener" />
  <listener class-name="reportConfig.ReportNGListener" />  

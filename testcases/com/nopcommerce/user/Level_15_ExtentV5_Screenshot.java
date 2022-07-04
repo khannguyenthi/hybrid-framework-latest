@@ -21,6 +21,7 @@ import pageObject.portal.nopCommerce.UserRewardPointPageObject;
 import reportConfig.ExtentTestManager;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import java.lang.reflect.Method;
@@ -35,10 +36,10 @@ import org.testng.annotations.AfterClass;
 
 public class Level_15_ExtentV5_Screenshot extends BaseTest{
 	
-	 @Parameters({"browser","url"})
+	@Parameters({"envName","serverName","browser", "ipAddress", "portNumber", "osName", "osVersion"})
 	 @BeforeClass 
-	  public void beforeClass(String browserName, String appUrl) {
-		 driver = getBrowserDriver(browserName, appUrl);	 
+	 public void beforeClass(@Optional("local") String envName, @Optional("dev") String serverName, @Optional("chrome") String browserName, @Optional("localhost") String ipAddress, @Optional("4444") String portNumber, @Optional("Windows") String osName, @Optional("10")String osVersion) {
+		driver = getBrowserDriver(envName, serverName, browserName, ipAddress, portNumber, osName, osVersion); 
 		 
 		 // 1  using for pre-condition case. 
 		 //homePage = new HomePageObject(driver);

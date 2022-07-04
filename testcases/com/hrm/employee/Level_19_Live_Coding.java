@@ -14,6 +14,7 @@ import pageObjects.hrm.MyInfoPO;
 import pageObjects.hrm.pageGenerator;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import static org.testng.Assert.assertEquals;
@@ -42,11 +43,10 @@ public class Level_19_Live_Coding extends BaseTest{
 	
 	//Environment environment;
 	
-	@Parameters({ "browser", "url" })
+	@Parameters({"envName","serverName","browser", "ipAddress", "portNumber", "osName", "osVersion"})
 	 @BeforeClass 
-	  public void beforeClass(String browserName, String appUrl) {
-		 log.info("Pre-condition - Step 01: Open browser '" + browserName + "' and navigate to '" + appUrl + "'");
-		 driver = getBrowserDriver(browserName, appUrl);	 
+	 public void beforeClass(@Optional("local") String envName, @Optional("dev") String serverName, @Optional("chrome") String browserName, @Optional("localhost") String ipAddress, @Optional("4444") String portNumber, @Optional("Windows") String osName, @Optional("10")String osVersion) {
+		 driver = getBrowserDriver(envName, serverName, browserName, ipAddress, portNumber, osName, osVersion); 	 
 		 loginPage = pageGenerator.getLoginPage(driver);
 		 driver.manage().window().maximize();
 		 
@@ -521,7 +521,7 @@ public class Level_19_Live_Coding extends BaseTest{
  
   @AfterClass(alwaysRun = true)
  	public void afterClass() {
- 	  closeBrowserAndDriver();
+	closeBrowserAndDriver("local");
  	}
   
   	private WebDriver driver; 
@@ -530,5 +530,5 @@ public class Level_19_Live_Coding extends BaseTest{
 	DashboardPO dashboardPage; 
 	EmployeeListPO employeeListPage;
 	MyInfoPO myInforPage;
-	
+	String envName;
 }
