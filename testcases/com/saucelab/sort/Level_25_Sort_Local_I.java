@@ -36,6 +36,10 @@ public class Level_25_Sort_Local_I extends BaseTest{
 		loginPage.enterToUsernameTextbox("standard_user");
 		loginPage.enterToPasswordTextbox("secret_sauce");
 		inventoryPage = loginPage.clickToLoginButton(); 
+		
+		System.out.println("Thread ID = " + Thread.currentThread().getId() + " with browser = " + browserName);
+		System.out.println("Thread ID = " + Thread.currentThread().getId() + " with driver = " + driver.toString());
+		
 	 }
 
  @Test

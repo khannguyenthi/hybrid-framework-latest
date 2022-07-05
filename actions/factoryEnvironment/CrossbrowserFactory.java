@@ -36,7 +36,7 @@ public class CrossbrowserFactory {
 		capability.setCapability("name", "Run on " + osName + " | " + browserName);
 		
 		try {
-			driver = new RemoteWebDriver(new URL(GlobalConstants.CROSS_URL), capability);
+			driver = new RemoteWebDriver(new URL(GlobalConstants.getGlobalConstants().getCrossUrl()), capability);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}

@@ -39,7 +39,7 @@ public class Level_19_Live_Coding extends BaseTest{
 	
 	String experienceEmpCompany, experienceEmpJobTitle, experienceEmpFromDate, experienceEmpToDate, experienceEmpComment;
 	
-	String avatarFilePath = GlobalConstants.UPLOAD_FILE + "Avatar.jpg";
+	String avatarFilePath = GlobalConstants.getGlobalConstants().getUploadFile() + "Avatar.jpg";
 	
 	//Environment environment;
 	

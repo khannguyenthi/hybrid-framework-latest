@@ -34,7 +34,9 @@ import factoryEnvironment.SaucelabFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
-	private WebDriver driver;
+	//private WebDriver driver; -> Cach 1 ko toi uu, vi khi parrallel se tao ra 3 thread gay ton bo nho
+	//private static WebDriver driver; //Khai bao static de tranh khai bao nhieu lan, nhung run parralel thì failed do driver cua bien nay, dung cho thread khac or = null
+	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>(); //cach 3 dung ThreadLocal
 	protected final Log log;
 	private String projectPath = System.getProperty("user.dir");
 	
@@ -45,41 +47,42 @@ public class BaseTest {
 	protected WebDriver getBrowserDriver(String envName, String serverName, String browserName, String ipAddress, String portNumber, String osName, String osVersion) {
 		switch (envName) {
 		case "local":
-			driver=new LocalFactory(browserName).createDriver();
+			driver.set(new LocalFactory(browserName).createDriver());
 			break;
 			
 		case "grid":
-			driver = new GridFactory(browserName, ipAddress, portNumber).createDriver();
+			driver.set(new GridFactory(browserName, ipAddress, portNumber).createDriver());
 			break;
 			
 		case "browserStack":
-			driver = new BrowserstackFactory(browserName, osName, osVersion).createDriver();
+			driver.set(new BrowserstackFactory(browserName, osName, osVersion).createDriver());
 			break;
 			
 		case "saucelab":
-			driver = new SaucelabFactory(browserName, osName).createDriver();
+			driver.set(new SaucelabFactory(browserName, osName).createDriver());
 			break;
 			
 		case "crossBrowser":
-			driver = new CrossbrowserFactory(browserName, osName).createDriver();
+			driver.set(new CrossbrowserFactory(browserName, osName).createDriver());
 			break;
 			
 		case "lambda":
-			driver = new LambdaFactory(browserName, osName).createDriver();
+			driver.set(new LambdaFactory(browserName, osName).createDriver());
 			break;
 			
 			
 			default:
-				driver=new LocalFactory(browserName).createDriver();
+				driver.set(new LocalFactory(browserName).createDriver());
 				break;
 		}
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get(getEnvironmentUrl(serverName));
-		return driver;
+		driver.get().manage().timeouts().implicitlyWait(GlobalConstants.getGlobalConstants().getShortTimeout(), TimeUnit.SECONDS);
+		driver.get().manage().window().maximize();
+		driver.get().get(getEnvironmentUrl(serverName));
+		//driver.get.(getEnvironmentUrl(serverName));
+		return driver.get();
 	}
-	
+	/*
 	protected WebDriver getBrowserDriverLocal(String browserName, String appUrl) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		
@@ -120,12 +123,12 @@ public class BaseTest {
 		 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		 driver.get(appUrl);
 		 //driver.get(getEnvironmentUrl(appUrl));
-		 return driver;
-	}
+		 return driver.get();
+	} */
 	
 
 	public WebDriver getDriverInstance() {
-		return this.driver;
+		return this.driver.get();
 	}
 	
 	protected String getEnvironmentUrl(String serverName) {
@@ -202,7 +205,7 @@ public class BaseTest {
 				String osName = System.getProperty("os.name").toLowerCase();
 				log.info("OS name = " + osName);
 
-				String driverInstanceName = driver.toString().toLowerCase();
+				String driverInstanceName = driver.get().toString().toLowerCase();
 				log.info("Driver instance name = " + driverInstanceName);
 
 				if (driverInstanceName.contains("chrome")) {
@@ -240,8 +243,10 @@ public class BaseTest {
 				}
 
 				if (driver != null) {
-					driver.manage().deleteAllCookies();
-					driver.quit();
+					driver.get().manage().deleteAllCookies();
+					driver.get().quit();
+					
+					driver.remove();
 				}
 			} catch (Exception e) {
 				log.info(e.getMessage());

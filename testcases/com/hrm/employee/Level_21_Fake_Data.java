@@ -38,7 +38,7 @@ public class Level_21_Fake_Data extends BaseTest{
 	
 	String experienceEmpCompany, experienceEmpJobTitle, experienceEmpFromDate, experienceEmpToDate, experienceEmpComment;
 	
-	String avatarFilePath = GlobalConstants.UPLOAD_FILE + "Avatar.jpg";
+	String avatarFilePath = GlobalConstants.getGlobalConstants().getUploadFile() + "Avatar.jpg";
 	
 	@Parameters({"envName","serverName","browser", "ipAddress", "portNumber", "osName", "osVersion"})
 	 @BeforeClass 

@@ -150,7 +150,7 @@ public class Level_08_Switch_Role extends BaseTestNopCommerce{
 	 
   @Test
   public void Role_02_Admin() {
-	 userHomePage.openPageUrl(driver, GlobalConstants.ADMIN_PAGE_URL);
+	 userHomePage.openPageUrl(driver, GlobalConstants.getGlobalConstants().getAdminPageUrl());
 	 adminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
 	 
 	 //Login as Admin role

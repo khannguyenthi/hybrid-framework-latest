@@ -582,7 +582,7 @@ public class BasePage {
 	
 	public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
 		//Duong dan cua thu muc upload file chay dc tren ca WIN MAC LINUx
-		String filePath = GlobalConstants.UPLOAD_FILE;
+		String filePath = GlobalConstants.getGlobalConstants().getUploadFile();
 		
 		// duong dan cua tat ca cac file
 		// 1 file: Java.png
@@ -894,8 +894,8 @@ public class BasePage {
 	}
 
 	
-	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
-	private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
+	private long longTimeout = GlobalConstants.getGlobalConstants().getLongTimeout();
+	private long shortTimeout = GlobalConstants.getGlobalConstants().getShortTimeout();
 	
 }
  
